@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_shop_ui/shared/theme/colors.dart';
 import 'package:food_shop_ui/shared/widget/button/button.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -8,7 +9,7 @@ class IntroView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff0095B6),
+      backgroundColor: primaryColor,
       body: Padding(
         padding: const EdgeInsets.all(24),
         child: Column(
@@ -59,8 +60,12 @@ class IntroView extends StatelessWidget {
               height: 12,
             ),
             // Get Started Button
-            const MyButton(
+            MyButton(
               text: "Get Started",
+              onTap: () {
+                // Go To Menu Page
+                Navigator.pushNamed(context, '/menuview');
+              },
             ),
           ],
         ),
