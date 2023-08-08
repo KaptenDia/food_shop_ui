@@ -1,6 +1,6 @@
 # food_shop_ui
 
-A new Flutter project.
+Food-maniac is a Flutter mobile application designed to cater to all the food enthusiasts out there. With a beautiful and intuitive user interface, this app aims to provide a seamless experience for browsing, discovering, and exploring various cuisines
 
 ## Getting Started
 
