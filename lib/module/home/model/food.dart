@@ -11,8 +11,12 @@ class Food {
     required this.rating,
   });
 
+  // ignore: unused_element
   String get _name => name;
+  // ignore: unused_element
   String get _price => price;
+  // ignore: unused_element
   String get _imagePath => imagePath;
+  // ignore: unused_element
   String get _rating => rating;
 }

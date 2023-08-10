@@ -1,42 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:food_shop_ui/module/menu/model/food.dart';
-import 'package:food_shop_ui/module/menu/widget/food_tile.dart';
-import 'package:food_shop_ui/shared/theme/colors.dart';
-import 'package:food_shop_ui/shared/widget/button/button.dart';
+import 'package:food_shop_ui/core.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class MenuView extends StatefulWidget {
-  const MenuView({super.key});
+import '../widget/food_tile.dart';
 
-  @override
-  State<MenuView> createState() => _MenuViewState();
-}
+class HomeView extends StatefulWidget {
+  const HomeView({Key? key}) : super(key: key);
 
-class _MenuViewState extends State<MenuView> {
-  // Food Menu
-  List foodMenu = [
-    Food(
-      name: "Healty Food",
-      price: "21.00",
-      imagePath: "assets/images/1.png",
-      rating: "4.7",
-    ),
-    Food(
-      name: "Salad",
-      price: "19.00",
-      imagePath: "assets/images/2.png",
-      rating: "4.8",
-    ),
-    Food(
-      name: "Junk Food",
-      price: "25.00",
-      imagePath: "assets/images/3.png",
-      rating: "4.9",
-    ),
-  ];
+  Widget build(context, HomeController controller) {
+    controller.view = this;
 
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[300],
       appBar: AppBar(
@@ -141,9 +114,10 @@ class _MenuViewState extends State<MenuView> {
           Expanded(
             child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemCount: foodMenu.length,
+                itemCount: controller.foodMenu.length,
                 itemBuilder: (context, index) => FoodTile(
-                      food: foodMenu[index],
+                      food: controller.foodMenu[index],
+                      onTap: () => controller.navigateToFoodDetails(index),
                     )),
           ),
           const SizedBox(
@@ -177,7 +151,7 @@ class _MenuViewState extends State<MenuView> {
                   children: [
                     // Image
                     Image.asset(
-                      'assets/images/3.png',
+                      'assets/images/1.png',
                       height: 60,
                     ),
                     const SizedBox(
@@ -223,4 +197,7 @@ class _MenuViewState extends State<MenuView> {
       ),
     );
   }
+
+  @override
+  State<HomeView> createState() => HomeController();
 }
