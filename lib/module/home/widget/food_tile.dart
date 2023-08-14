@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../model/food.dart';
+import '../../../model/food.dart';
 
 class FoodTile extends StatelessWidget {
   final Food food;

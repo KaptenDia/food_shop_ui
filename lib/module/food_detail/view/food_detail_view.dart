@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_shop_ui/core.dart';
-import 'package:food_shop_ui/module/food_detail/controller/food_detail_controller.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../../home/model/food.dart';
 
 class FoodDetailView extends StatefulWidget {
   final Food food;

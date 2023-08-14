@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:food_shop_ui/core.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../widget/food_tile.dart';
-
 class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);
 
@@ -15,16 +13,22 @@ class HomeView extends StatefulWidget {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.transparent,
-        leading: Icon(
+        foregroundColor: Colors.grey[800],
+        leading: const Icon(
           Icons.menu,
-          color: Colors.grey[900],
         ),
-        title: Text(
+        title: const Text(
           'Food Maniac',
-          style: TextStyle(
-            color: Colors.grey[900],
-          ),
         ),
+        actions: [
+          // Cart button
+          IconButton(
+            onPressed: () {
+              Get.to(const CartView());
+            },
+            icon: const Icon(Icons.shopping_cart),
+          ),
+        ],
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
